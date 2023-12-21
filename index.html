@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+
+  <title>Todo-List</title>
+</head>
+
+<body>
+  <!-- <form name="form_main">
+    <h1 class="title">Lista de tarefas</h1>
+
+    <label for="task">Tarefa: </label>
+    <input type="text" name="task" id="task" /> <br />
+    <button type="button" onclick="addTarefa()">Add</button>
+  </form>
+
+  <fieldset>
+    <legend>Tarefas:</legend>
+    <ul>
+      <li>Limpar casa</li>
+      <li>Outras</li>
+    </ul>
+  </fieldset> -->
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="row container d-flex justify-content-center">
+        <div class="col-md-12">
+          <div class="card px-3">
+            <div class="card-body">
+              <h1 class="card-title">Lista de Tarefas</h4>
+              <div class="add-items d-flex">
+                <input type="text" class="form-control todo-list-input" />
+                <button class="add btn btn-primary font-weight-bold todo-list-add-btn" onclick="addTarefa()">
+                  Add
+                </button>
+              </div>
+              <div class="list-wrapper">
+                <ul class="d-flex flex-column-reverse todo-list">
+                  <li>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" /> Comprar verduras.
+                        <i class="input-helper"></i></label>
+                    </div>
+                    <i class="remove mdi mdi-close-circle-outline"></i>
+                  </li>
+                  <li class="completed">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" checked="" />
+                        Limpar Casa.
+                        <i class="input-helper"></i></label>
+                    </div>
+                    <i class="remove mdi mdi-close-circle-outline"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
