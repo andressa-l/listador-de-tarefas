@@ -29,37 +29,41 @@ function addTarefa() {
 }
 */
 
-(function($) {
-    'use strict';
-    $(function() {
-      var todoListItem = $('.todo-list');
-      var todoListInput = $('.todo-list-input');
-      $('.todo-list-add-btn').on("click", function(event) {
-        event.preventDefault();
-  
-        var item = $(this).prevAll('.todo-list-input').val();
-  
-        if (item) {
-          todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'/>" + item + "<i class='input-helper'></i></label></div><i class='remove mdi mdi-close-circle-outline'></i></li>");
-          todoListInput.val("");
-        }
-  
-      });
-  
-      todoListItem.on('change', '.checkbox', function() {
-        if ($(this).attr('checked')) {
-          $(this).removeAttr('checked');
-        } else {
-          $(this).attr('checked', 'checked');
-        }
-  
-        $(this).closest("li").toggleClass('completed');
-  
-      });
-  
-      todoListItem.on('click', '.remove', function() {
-        $(this).parent().remove();
-      });
-  
-    });
-  })(jQuery);
+
+$(document).ready(function() {
+  const todoListItem = $('#todo-list');
+  const todoListInput = $('#todo-list-input');
+  const todoListAddBtn = $('.todo-list-add-btn');
+
+  todoListAddBtn.on('click', function(event) {
+      event.preventDefault();
+
+      const item = todoListInput.val().trim();
+
+      if (item) {
+          const listItemHtml = `
+              <li>
+                  <div class="form-check">
+                      <label class="form-check-label">
+                          <input class="checkbox" type="checkbox"/>
+                          ${item}
+                          <i class="input-helper"></i>
+                      </label>
+                  </div>
+                  <i class="remove mdi mdi-close-circle-outline"></i>
+              </li>
+          `;
+
+          todoListItem.append(listItemHtml);
+          todoListInput.val('');
+      }
+  });
+
+  todoListItem.on('change', '.checkbox', function() {
+      $(this).closest("li").toggleClass('completed', this.checked);
+  });
+
+  todoListItem.on('click', '.remove', function() {
+      $(this).parent().remove();
+  });
+});
