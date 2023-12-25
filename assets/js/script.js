@@ -1,7 +1,3 @@
-
-// $(document).ready(function() {
-
-
 // Espera o documento HTML ser carregado antes de executar o código
 document.addEventListener("DOMContentLoaded", function () {
   // Seleciona os elementos HTML que serão usados no código
